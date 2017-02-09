@@ -20,15 +20,11 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules|bower_components|devTools)/,
         loader: 'babel-loader',
       },
     ],
   },
-  exclude: [
-    /(node_modules|bower_components|unitTest)/,
-    path.resolve(__dirname, 'src/containers/devTools.js'),
-  ],
   resolve: {
     extensions: ['.json', '.js', '.jsx'],
   },
