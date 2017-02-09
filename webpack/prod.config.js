@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const assetsPath = path.resolve(__dirname, '../public/assets');
+
 module.exports = {
   devtool: 'source-map',
   context: path.resolve(__dirname, '..'),

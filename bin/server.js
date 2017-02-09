@@ -1,4 +1,3 @@
-
 /* eslint no-console: 0, react/jsx-filename-extension: 0 */
 
 import express from 'express';
@@ -19,19 +18,18 @@ import getRoutes from '../src/routes';
 import Default from '../src/layouts/default';
 import { port, apiHost, apiPort } from '../config/env';
 
-global.__CLIENT__ = false; // eslint-disable-line
-
 const targetUrl = `http://${apiHost}:${apiPort}`;
 const pretty = new PrettyError();
 const app = express();
 const server = new http.Server(app);
-
 const proxy = httpProxy.createProxyServer({
   target: targetUrl,
   ws: true,
 });
 
-app.use('/', express.static(path.resolve(__dirname, '../../public')));
+global.__CLIENT__ = false; // eslint-disable-line
+
+app.use('/', express.static(path.resolve(__dirname, '../public')));
 
 app.use('/api', (req, res) => {
   proxy.web(req, res, { target: `${targetUrl}/api` });

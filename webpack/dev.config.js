@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const assetsPath = path.resolve(__dirname, '../public/assets');
 const { webpackHost, webpackPort } = require('../config/env');
+
 module.exports = {
   devtool: 'inline-source-map',
   context: path.resolve(__dirname, '..'),
@@ -24,22 +25,6 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
       },
-      // { 
-      //   test: /\.(png|jpg)$/,
-      //   loader: 'file-loader?name=images/[name].[ext]' 
-      // },
-      // {   
-      //   test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, 
-      //   loader: 'file-loader?name=fonts/[name].[ext]' 
-      // },
-      // {
-      //   test: /\.css$/,
-      //   loader: 'style!css!autoprefixer?browsers=last 2 versions'
-      // },
-      // {   
-      //   test: /\.styl$/, 
-      //   loader: 'style!css!stylus-loader' 
-      // }
     ]
   },
   resolve: {
