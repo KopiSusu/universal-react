@@ -21,17 +21,12 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        loader: 'babel-loader',
       },
     ],
   },
-  progress: true,
   resolve: {
-    modulesDirectories: [
-      'node_modules',
-      'src',
-    ],
-    extensions: ['', '.json', '.js', '.jsx'],
+    extensions: ['.json', '.js', '.jsx'],
   },
   plugins: [
     new webpack.DefinePlugin({
