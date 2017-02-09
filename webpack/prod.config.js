@@ -25,6 +25,10 @@ module.exports = {
       },
     ],
   },
+  exclude: [
+    /(node_modules|bower_components|unitTest)/,
+    path.resolve(__dirname, 'src/containers/devTools.js'),
+  ],
   resolve: {
     extensions: ['.json', '.js', '.jsx'],
   },
