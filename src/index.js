@@ -33,8 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
   }
 }
 
-console.log('inside devtools')
-if (__DEVTOOLS__ && !global.devToolsExtension) {
+if (__DEVTOOLS__ && !global.devToolsExtension && process.env.NODE_ENV !== 'production') {
   const DevTools = require('./containers/devTools'); // eslint-disable-line
 
   console.log('inside devtools')

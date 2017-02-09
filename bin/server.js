@@ -16,7 +16,7 @@ import {
   createStore,
 } from '../src/redux/createStore';
 import getRoutes from '../src/routes';
-import Default from '../src/layouts/Default';
+import Default from '../src/layouts/default';
 import { port, apiHost, apiPort } from '../config/env';
 
 global.__CLIENT__ = false; // eslint-disable-line
@@ -25,6 +25,7 @@ const targetUrl = `http://${apiHost}:${apiPort}`;
 const pretty = new PrettyError();
 const app = express();
 const server = new http.Server(app);
+
 const proxy = httpProxy.createProxyServer({
   target: targetUrl,
   ws: true,

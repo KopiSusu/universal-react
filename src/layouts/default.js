@@ -6,8 +6,9 @@ import { webpackHost, webpackPort } from '../../config/env';
 
 export default class Default extends React.Component {
   render() {
-      const { component, store } = this.props;
-      const content = component ? ReactDOM.renderToString(component) : '';
+    const { component, store } = this.props;
+    const content = component ? ReactDOM.renderToString(component) : '';
+
     return (
           <html lang="en">
             <head>
